@@ -66,6 +66,13 @@
                     </GridViewColumn>
                     <GridViewColumn Header="Title" Width="120" DisplayMemberBinding="{Binding Title}" />
                     <GridViewColumn Header="Note" Width="150" DisplayMemberBinding="{Binding Note}" />
+                    <GridViewColumn Header="TextBox" Width="120">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBox Text="{Binding Title}"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
