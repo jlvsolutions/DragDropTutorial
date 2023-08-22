@@ -154,7 +154,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
 
         // Get the current mouse position
         //Point mousePos = e.GetPosition(null);
-        Point mousePos = e.GetPosition(lstView);
+        Point mousePos = e.GetPosition(listView);
         Vector diff = _startPoint - mousePos;
         MousePos = mousePos;
 
@@ -174,10 +174,10 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             DataObject dragData = new DataObject("WorkItem", item);
 
             // Get the offset for ListViewItem to move
-            _origLviPoint = listViewItem.TransformToVisual(lstView).Transform(new Point());
+            _origLviPoint = listViewItem.TransformToVisual(listView).Transform(new Point());
 
             // Get the index of the ListViewItem to move
-            _startIndex = lstView.SelectedIndex;
+            _startIndex = listView.SelectedIndex;
 
             // Create and add the Adorners
             AdornerLayer adornerLayer = AdornerLayer.GetAdornerLayer(listView);
