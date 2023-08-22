@@ -132,7 +132,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
     }
 
     // Helper to search up the VisualTree
-    private static T FindAnchestor<T>(DependencyObject current)
+    private static T FindAncestor<T>(DependencyObject current)
         where T : DependencyObject
     {
         do
@@ -163,7 +163,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
                      Math.Abs(diff.Y) > SystemParameters.MinimumVerticalDragDistance))
         {
             // Get the dragged ListViewItem
-            ListViewItem listViewItem = FindAnchestor<ListViewItem>((DependencyObject)e.OriginalSource);
+            ListViewItem listViewItem = FindAncestor<ListViewItem>((DependencyObject)e.OriginalSource);
             if (listViewItem == null) return;
 
             // Get the associated WorkItem data
@@ -262,7 +262,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         CurrentMousePos = e.GetPosition(lstView);
 
         DependencyObject depObj = VisualTreeHelper.HitTest(lstView, CurrentMousePos).VisualHit;
-        ListViewItem listViewItem = FindAnchestor<ListViewItem>(depObj);
+        ListViewItem listViewItem = FindAncestor<ListViewItem>(depObj);
 
         if (listViewItem == null || _dropCursorAdorner == null)
         {
