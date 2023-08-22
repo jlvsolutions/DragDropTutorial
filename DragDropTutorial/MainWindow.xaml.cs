@@ -190,7 +190,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
             // This returns once the drag drop is completed, i.e., mouse button released or ESC key.
             DragDropEffects performed = DragDrop.DoDragDrop(listViewItem, dragData, DragDropEffects.Copy | DragDropEffects.Move);
 
-            // Remove the adorner layer
+            // Remove the adorners
             adornerLayer.Remove(_dropCursorAdorner);
             adornerLayer.Remove(_dragVisualAdorner);
         }
