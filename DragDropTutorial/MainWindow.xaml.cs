@@ -156,7 +156,7 @@ public partial class MainWindow : Window, INotifyPropertyChanged
         //Point mousePos = e.GetPosition(null);
         Point mousePos = e.GetPosition(listView);
         Vector diff = _startPoint - mousePos;
-        MousePos = mousePos;
+        MousePos = mousePos;  // Something to bind to if you want to watch
 
         if (e.LeftButton == MouseButtonState.Pressed &&
                     (Math.Abs(diff.X) > SystemParameters.MinimumHorizontalDragDistance ||
